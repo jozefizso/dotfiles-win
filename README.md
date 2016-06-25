@@ -9,4 +9,4 @@ Suggestions/improvements
 
 ## License
 
-Licensed under MIT License. Copyright (c) 2015 Jozef Izso.
+Licensed under MIT License. Copyright © 2015 Jozef Izso.
