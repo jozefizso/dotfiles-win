@@ -31,8 +31,8 @@
   invert = revert
   last = log -1 HEAD --format=format:"%Cred%H"
   summary = status -u -s
-  graph = log --graph -10 --branches --remotes --tags  --format=format:'%Cgreen%h %Creset� %<(75,trunc)%s (%cN, %ar) %Cred%d' --date-order
-  history = log -10 --format=format:'%Cgreen%h %Creset� %s (%cN, %ar)'
+  graph = log --graph -10 --branches --remotes --tags  --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %ar) %Cred%d' --date-order
+  history = log -10 --format=format:'%Cgreen%h %Creset• %s (%cN, %ar)'
   branchout = checkout -b
   tags = tag
   branches = branch -a
@@ -49,7 +49,7 @@
   rewrite = rebase -i
   amend = commit --amend
   back = checkout "-"
-  contributors = shortlog -s -n
+  contributors = shortlog -s -n --no-merges
   filetrail = log --follow -p -w
   mergetrail = log --ancestry-path --merges
   unmerged = diff --name-only --diff-filter=U
