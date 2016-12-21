@@ -1,7 +1,12 @@
 [alias]
   # View the SHA, description, and history graph of the latest 20 commits
-  l = log --pretty=oneline -n 20 --graph
-  ll = log --all --pretty='format:%d %Cgreen%h%Creset %an - %s' --graph
+  l = log --pretty=oneline -n 20 --graph --decorate
+  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+
+  #ll = log --all --pretty='format:%d %Cgreen%h%Creset %an - %s' --graph
+
   # View the current working tree status using the short format
   s = status -s
   # Diff
@@ -14,10 +19,6 @@
   ca = !git add -A && git commit -av
   # Switch to a branch, creating it if necessary
   go = checkout -B
-  # Show verbose output about tags, branches or remotes
-  tags = tag -l
-  branches = branch -a
-  remotes = remote -v
   # Credit an author on the latest commit
   credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
   # Undo a `git push`
@@ -28,6 +29,46 @@
   st = status -s
   pu = !"git fetch origin -v; git fetch upstream -v; git merge upstream/master"
   up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+
+  r = reset
+  r1 = reset HEAD^
+  r2 = reset HEAD^^
+  rh = reset --hard
+  rh1 = reset HEAD^ --hard
+  rh2 = reset HEAD^^ --hard
+
+  # http://gggritso.com/human-git-aliases
+  unstage = reset -q HEAD --
+  discard = checkout --
+  nevermind = !git reset --hard HEAD && git clean -d -f
+  uncommit = reset --mixed HEAD~
+  save = commit -m
+  resave = commit --amend
+  invert = revert
+  last = log -1 HEAD --format=format:"%Cred%H"
+  summary = status -u -s
+  graph = log --graph -10 --branches --remotes --tags  --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %ar) %Cred%d' --date-order
+  history = log -10 --format=format:'%Cgreen%h %Creset• %s (%cN, %ar)'
+  branchout = checkout -b
+  tags = tag -l -n 40
+  branches = branch -a
+  stashes = stash list
+  remotes = remote -v
+  prestage = diff -w --word-diff=color
+  precommit = diff --cached -w --word-diff=color --word-diff-regex='[^[:space:]<>]+'
+  move = mv
+  remove = rm
+  unmerged = branch --no-merged
+  unstash = stash pop
+  what = show -w
+  untrack = rm -r --cached
+  rewrite = rebase -i
+  amend = commit --amend
+  back = checkout "-"
+  contributors = shortlog -s -n --no-merges
+  filetrail = log --follow -p -w
+  mergetrail = log --ancestry-path --merges
+  unmerged = diff --name-only --diff-filter=U
 
 [apply]
   # Detect whitespace errors when applying a patch
@@ -46,6 +87,7 @@
   # a line
   whitespace = space-before-tab,-indent-with-non-tab,trailing-space
   autocrlf = true
+  editor = code --wait
 
 [color]
   # Use colors in Git commands that are capable of colored output when outputting to the terminal
@@ -71,3 +113,12 @@
 [branch "master"]
   remote = origin
   merge = refs/heads/master
+
+[push]
+	default = current
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	required = true
+	clean = git-lfs clean -- %f
+[commit]
+	gpgsign = false
