@@ -1,7 +1,12 @@
 [alias]
   # View the SHA, description, and history graph of the latest 20 commits
-  l = log --pretty=oneline -n 20 --graph
-  ll = log --all --pretty='format:%d %Cgreen%h%Creset %an - %s' --graph
+  l = log --pretty=oneline -n 20 --graph --decorate
+  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+
+  #ll = log --all --pretty='format:%d %Cgreen%h%Creset %an - %s' --graph
+
   # View the current working tree status using the short format
   s = status -s
   # Diff
@@ -14,12 +19,23 @@
   ca = !git add -A && git commit -av
   # Switch to a branch, creating it if necessary
   go = checkout -B
+  # Credit an author on the latest commit
+  credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
+  # Undo a `git push`
+  undopush = push -f origin HEAD^:master
   # Subversion style shortcuts
-  co = clone
+  co = checkout
   ci = commit
   st = status -s
   pu = !"git fetch origin -v; git fetch upstream -v; git merge upstream/master"
   up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+
+  r = reset
+  r1 = reset HEAD^
+  r2 = reset HEAD^^
+  rh = reset --hard
+  rh1 = reset HEAD^ --hard
+  rh2 = reset HEAD^^ --hard
 
   # http://gggritso.com/human-git-aliases
   unstage = reset -q HEAD --
@@ -34,7 +50,7 @@
   graph = log --graph -10 --branches --remotes --tags  --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %ar) %Cred%d' --date-order
   history = log -10 --format=format:'%Cgreen%h %Creset• %s (%cN, %ar)'
   branchout = checkout -b
-  tags = tag
+  tags = tag -l -n 40
   branches = branch -a
   stashes = stash list
   remotes = remote -v
