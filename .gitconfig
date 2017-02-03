@@ -93,7 +93,7 @@
   # Use colors in Git commands that are capable of colored output when outputting to the terminal
   ui = auto
 [color "branch"]
-  current = yellow reverse
+  current = white yellow
   local = yellow
   remote = blue
 [color "diff"]
