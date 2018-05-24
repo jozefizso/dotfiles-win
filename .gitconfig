@@ -122,3 +122,8 @@
 	clean = git-lfs clean -- %f
 [commit]
 	gpgsign = false
+
+[includeIf "gitdir:c:/dev/soonr/"]
+  path = .gitconfig-soonr
+[includeIf "gitdir:d:/dev/soonr/"]
+  path = .gitconfig-soonr
