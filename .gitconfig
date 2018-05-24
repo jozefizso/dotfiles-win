@@ -115,13 +115,13 @@
   merge = refs/heads/master
 
 [push]
-	default = current
+  default = current
 [filter "lfs"]
-	smudge = git-lfs smudge -- %f
-	required = true
-	clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  required = true
+  clean = git-lfs clean -- %f
 [commit]
-	gpgsign = false
+  gpgsign = false
 
 [includeIf "gitdir:c:/dev/soonr/"]
   path = .gitconfig-soonr
