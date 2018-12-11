@@ -1,5 +1,7 @@
 # Created by https://www.gitignore.io/api/windows
 
+totalcmd/*.br2
+
 ### Windows ###
 # Windows image file caches
 Thumbs.db
