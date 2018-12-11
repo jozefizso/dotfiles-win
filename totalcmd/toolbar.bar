@@ -1,8 +1,14 @@
 [Buttonbar]
-Buttoncount=1
+Buttoncount=2
 button1=C:\Program Files\Sublime Merge\sublime_merge.exe
 cmd1=""C:\Program Files\Sublime Merge\sublime_merge.exe""
 param1=%P
 path1=C:\Program Files\Sublime Merge\
 iconic1=0
 menu1=Sublime Merge
+button2=""C:\Program Files\Sublime Text 3\sublime_text.exe""
+cmd2=""C:\Program Files\Sublime Text 3\sublime_text.exe""
+param2=%P
+path2=C:\Program Files\Sublime Text 3\
+iconic2=0
+menu2=Sublime Text
