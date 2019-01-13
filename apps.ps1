@@ -12,6 +12,9 @@ choco install -y totalcommander
 choco install -y sublimetext3
 # choco install -y sublimemerge
 
+choco install -y minishift
+choco install -y openshift-cli
+
 choco install -y jdk8 --x86
 choco install -y maven
 choco install -y ant
