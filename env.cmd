@@ -1,0 +1,5 @@
+setx VAGRANT_DEFAULT_PROVIDER "vmware_desktop"
+
+SET DOCKER_TLS_VERIFY=1
+SET DOCKER_HOST=tcp://10.16.34.230:2376
+SET DOCKER_CERT_PATH=C:\dev\devops\minishift\certs
