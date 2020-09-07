@@ -30,7 +30,8 @@
   pu = !"git fetch origin -v; git fetch upstream -v; git merge upstream/master"
   up = !git pull --rebase --prune $@ && git submodule update --init --recursive
 
-  r = reset
+  r = remote -v
+  rr = !git reset --hard HEAD && git clean -d -f
   r1 = reset HEAD^
   r2 = reset HEAD^^
   rh = reset --hard
