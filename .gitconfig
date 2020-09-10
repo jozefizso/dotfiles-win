@@ -51,7 +51,7 @@
   graph = log --graph -10 --branches --remotes --tags  --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %ar) %Cred%d' --date-order
   history = log -10 --format=format:'%Cgreen%h %Creset• %s (%cN, %ar)'
   branchout = checkout -b
-  tags = tag -l -n 40
+  tags = tag -l -n1
   branches = branch -a
   stashes = stash list
   remotes = remote -v
