@@ -1,6 +1,9 @@
 # macOS Sierra Retina cursors
 > Art by [in-dolly](https://www.deviantart.com/in-dolly)
 
+![darhequ-bca1e588-6de7-4620-a9e1-39b99c89b49f](https://user-images.githubusercontent.com/287778/93001515-d0964b00-f52f-11ea-8470-88b2f59cc0f4.png)
+
+
 ## Notes
 
 Dec 13, 2016 — Bugfixes. Now it's much better.  
