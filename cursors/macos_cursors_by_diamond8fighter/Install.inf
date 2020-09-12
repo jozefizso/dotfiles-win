@@ -1,0 +1,51 @@
+[Version]
+signature="$CHICAGO$"
+
+[DefaultInstall]
+CopyFiles = Scheme.Cur
+AddReg    = Scheme.Reg
+
+[DestinationDirs]
+Scheme.Cur = 24,"%CUR_DIR%"
+
+[Scheme.Reg]
+HKCU,"Control Panel\Cursors\Schemes","%SCHEME_NAME%",,"%24%\%CUR_DIR%\%pointer%,%24%\%CUR_DIR%\%help%,%24%\%CUR_DIR%\%work%,%24%\%CUR_DIR%\%busy%,%24%\%CUR_DIR%\%cross%,%24%\%CUR_DIR%\%text%,%24%\%CUR_DIR%\%handwrt%,%24%\%CUR_DIR%\%unavailiable%,%24%\%CUR_DIR%\%vert%,%24%\%CUR_DIR%\%horz%,%24%\%CUR_DIR%\%dgn1%,%24%\%CUR_DIR%\%dgn2%,%24%\%CUR_DIR%\%move%,%24%\%CUR_DIR%\%alternate%,%24%\%CUR_DIR%\%link%,%24%\%CUR_DIR%\%pin%,%24%\%CUR_DIR%\%person%"
+
+[Scheme.Cur]
+Default.cur
+Help.cur
+Beachball.ani
+Cross.cur
+Text.cur
+Pen.cur
+No.cur
+Resize_NS.cur
+Resize_WE.cur
+Resize_NWSE.cur
+Resize_NESW.cur
+Move.cur
+Alternate.cur
+Hand.cur
+Pin.cur
+Person.cur
+
+[Strings]
+CUR_DIR       = "Windows\Cursors\macOS"
+SCHEME_NAME   = "macOS"
+pointer       = "Default.cur"
+help          = "Help.cur"
+work          = "Beachball.ani"
+busy          = "Beachball.ani"
+cross         = "Cross.cur"
+text          = "Text.cur"
+handwrt       = "Pen.cur"
+unavailiable  = "No.cur"
+vert          = "Resize_NS.cur"
+horz          = "Resize_WE.cur"
+dgn1          = "Resize_NWSE.cur"
+dgn2          = "Resize_NESW.cur"
+move          = "Move.cur"
+alternate     = "Alternate.cur"
+link          = "Hand.cur"
+pin           = "Pin.cur"
+person        = "Person.cur"
