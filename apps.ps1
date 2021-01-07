@@ -14,6 +14,8 @@ choco install -y powershell-core
 
 choco install -y cascadiamono
 
+choco install -y cascadiamono
+
 choco install -y minishift
 choco install -y openshift-cli
 
