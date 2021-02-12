@@ -12,6 +12,8 @@ choco install -y totalcommander
 choco install -y sublimetext3
 # choco install -y sublimemerge
 
+choco install -y winmerge
+
 choco install -y minishift
 choco install -y openshift-cli
 
