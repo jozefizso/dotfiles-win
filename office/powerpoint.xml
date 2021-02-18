@@ -1,0 +1,32 @@
+<Configuration>
+  <Add OfficeClientEdition="32" Channel="Monthly" AllowCdnFallback="TRUE" ForceUpgrade="TRUE">
+    <Product ID="O365ProPlusRetail">
+      <Language ID="en-us" />
+      <Language ID="sk-sk" />
+      <ExcludeApp ID="Groove" />
+      <ExcludeApp ID="OneNote" />
+      <ExcludeApp ID="Access" />
+      <ExcludeApp ID="Publisher" />
+      <ExcludeApp ID="Lync" />
+      <ExcludeApp ID="OneDrive" />
+      <ExcludeApp ID="Word" />
+      <ExcludeApp ID="Excel" />
+      <ExcludeApp ID="Outlook" />
+      <ExcludeApp ID="Teams" />
+    </Product>
+  </Add>
+  <Property Name="SharedComputerLicensing" Value="0" />
+  <Property Name="PinIconsToTaskbar" Value="TRUE" />
+  <Property Name="SCLCacheOverride" Value="0" />
+  <Updates Enabled="TRUE" />
+  <RemoveMSI All="TRUE" />
+  <AppSettings>
+    <Setup Name="Company" Value="goIT Solutions" />
+    <User Key="software\microsoft\office\16.0\excel" Name="dontshowwhatsnew" Value="1" Type="REG_DWORD" App="office16" Id="L_DontShowWhatsNewInformationExcel" />
+    <User Key="software\microsoft\office\16.0\powerpoint" Name="dontshowwhatsnew" Value="1" Type="REG_DWORD" App="office16" Id="L_DontShowWhatsNewInformationPowerPoint" />
+    <User Key="software\microsoft\office\16.0\visio" Name="dontshowwhatsnew" Value="1" Type="REG_DWORD" App="office16" Id="L_DontShowWhatsNewInformationVisio" />
+    <User Key="software\microsoft\office\16.0\outlook" Name="dontshowwhatsnew" Value="1" Type="REG_DWORD" App="office16" Id="L_DontShowWhatsNewInformationOutlook" />
+    <User Key="software\microsoft\office\16.0\onenote" Name="dontshowwhatsnew" Value="1" Type="REG_DWORD" App="office16" Id="L_DontShowWhatsNewInformationOneNote" />
+    <User Key="software\microsoft\office\16.0\word" Name="dontshowwhatsnew" Value="1" Type="REG_DWORD" App="office16" Id="L_DontShowWhatsNewInformationWord" />
+  </AppSettings>
+</Configuration>
