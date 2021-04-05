@@ -11,10 +11,13 @@ choco install -y totalcommander
 choco install -y sublimemerge
 choco install -y winmerge
 choco install -y powershell-core
+choco install -y microsoft-windows-terminal
 
 choco install -y cascadiamono
 
 choco install -y cascadiamono
+choco install -y hashcheck
+
 
 choco install -y minishift
 choco install -y openshift-cli
