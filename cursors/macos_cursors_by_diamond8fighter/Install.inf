@@ -15,6 +15,7 @@ HKCU,"Control Panel\Cursors\Schemes","%SCHEME_NAME%",,"%24%\%CUR_DIR%\%pointer%,
 Default.cur
 Help.cur
 Beachball.ani
+Working.ani
 Cross.cur
 Text.cur
 Pen.cur
@@ -34,7 +35,7 @@ CUR_DIR       = "Windows\Cursors\macOS"
 SCHEME_NAME   = "macOS"
 pointer       = "Default.cur"
 help          = "Help.cur"
-work          = "Beachball.ani"
+work          = "Working.ani"
 busy          = "Beachball.ani"
 cross         = "Cross.cur"
 text          = "Text.cur"
