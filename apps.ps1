@@ -9,6 +9,8 @@ choco install -y 7zip
 choco install -y notepad2-mod
 choco install -y totalcommander
 
+choco install -y cascadiamono
+
 choco install -y sublimetext3
 # choco install -y sublimemerge
 
