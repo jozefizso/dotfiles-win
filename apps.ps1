@@ -14,8 +14,8 @@ choco install -y powershell-core
 choco install -y microsoft-windows-terminal
 
 choco install -y cascadiamono
+choco install -y cascadiacodepl
 
-choco install -y cascadiamono
 choco install -y hashcheck
 
 
