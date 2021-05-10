@@ -2,26 +2,27 @@
 # Apps for development machine
 #
 
-choco install -y firefox
+choco upgrade -y git
+choco upgrade -y 7zip
+choco upgrade -y notepad2-mod
+choco upgrade -y totalcommander
+choco upgrade -y sublimemerge
+choco upgrade -y winmerge
+choco upgrade -y powershell-core
+choco upgrade -y microsoft-windows-terminal
 
-choco install -y git
-choco install -y 7zip
-choco install -y notepad2-mod
-choco install -y totalcommander
-choco install -y sublimemerge
-choco install -y winmerge
-choco install -y powershell-core
-choco install -y microsoft-windows-terminal
+choco upgrade -y cascadiamono
+choco upgrade -y cascadiacodepl
 
-choco install -y cascadiamono
-choco install -y cascadiacodepl
-
-choco install -y hashcheck
+choco upgrade -y hashcheck
 
 
-choco install -y minishift
-choco install -y openshift-cli
+# extra apps
+choco upgrade -y firefox
 
-choco install -y jdk8 --x86
-choco install -y maven
-choco install -y ant
+choco upgrade -y minishift
+choco upgrade -y openshift-cli
+
+choco upgrade -y jdk8 --x86
+choco upgrade -y maven
+choco upgrade -y ant
