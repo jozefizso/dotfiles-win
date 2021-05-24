@@ -2,7 +2,7 @@
 # Apps for development machine
 #
 
-choco upgrade -y git
+choco upgrade -y git --params "/NoShellIntegration"
 choco upgrade -y 7zip
 choco upgrade -y notepad2-mod
 choco upgrade -y totalcommander
