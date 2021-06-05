@@ -1,3 +1,7 @@
+[user]
+	name = Jozef Izso
+	email = jozef.izso@gmail.com
+
 [alias]
   # View the SHA, description, and history graph of the latest 20 commits
   l = log --pretty=oneline -n 20 --graph --decorate
@@ -124,7 +128,13 @@
 [commit]
   gpgsign = false
 
-[includeIf "gitdir:c:/dev/soonr/"]
+[includeIf "gitdir/i:c:/dev/soonr/"]
   path = .gitconfig-soonr
-[includeIf "gitdir:d:/dev/soonr/"]
+[includeIf "gitdir/i:d:/dev/soonr/"]
   path = .gitconfig-soonr
+
+[includeIf "gitdir/i:c:/dev/slido/"]
+  path = .gitconfig-slido
+[includeIf "gitdir/i:d:/dev/slido/"]
+  path = .gitconfig-slido
+
