@@ -16,6 +16,9 @@ choco upgrade -y cascadiacodepl
 
 choco upgrade -y hashcheck
 
+choco upgrade -y nodejs-lts
+choco upgrade -y yarn
+
 
 # extra apps
 choco upgrade -y firefox
