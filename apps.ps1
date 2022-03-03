@@ -3,6 +3,7 @@
 #
 
 choco upgrade -y git --params "/NoShellIntegration"
+choco upgrade -y gh
 choco upgrade -y 7zip
 choco upgrade -y notepad2-mod
 choco upgrade -y totalcommander
