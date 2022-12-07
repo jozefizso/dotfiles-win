@@ -23,11 +23,4 @@ choco upgrade -y yarn
 
 
 # extra apps
-choco upgrade -y firefox
-
-choco upgrade -y minishift
-choco upgrade -y openshift-cli
-
-choco upgrade -y jdk8 --x86
-choco upgrade -y maven
-choco upgrade -y ant
+# choco upgrade -y firefox
