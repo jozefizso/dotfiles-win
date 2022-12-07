@@ -20,6 +20,7 @@ choco upgrade -y hashcheck
 
 choco install nodejs-lts --version=16.18.1
 choco upgrade -y yarn
+choco upgrade -y mkcert
 
 
 # extra apps
