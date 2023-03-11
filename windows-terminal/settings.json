@@ -8,7 +8,7 @@
     // If enabled, selections are automatically copied to your clipboard.
     "copyOnSelect": true,
     // If enabled, formatted data is also copied to your clipboard
-    "copyFormatting": false,
+    "copyFormatting": "none",
 
     // To learn more about profiles, visit https://aka.ms/terminal-profile-settings
     "profiles":
@@ -16,8 +16,10 @@
         "defaults":
         {
             "colorScheme": "Snazzy",
-            "fontFace": "Cascadia Mono PL",
-            "fontSize": 10
+            "font": {
+                "face": "Cascadia Mono PL",
+                "size": 10
+            }
         },
         "list":
         [
