@@ -25,3 +25,5 @@ choco upgrade -y mkcert
 
 # extra apps
 # choco upgrade -y firefox
+
+winget install JanDeDobbeleer.OhMyPosh -s winget
