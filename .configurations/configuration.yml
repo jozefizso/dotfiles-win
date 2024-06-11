@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+# Reference: https://github.com/microsoft/winget-create#building-the-client
+properties:
+  configurationVersion: 0.2.0
+  resources:
+  - resource: Microsoft.WinGet.DSC/WinGetPackage
+    directives:
+      description: Installing Git.Git
+      allowPrerelease: true
+    settings:
+      id: "Git.Git"
+      source: winget
+    id: Git.Git
+
+  - resource: Microsoft.WinGet.DSC/WinGetPackage
+    directives:
+      description: Installing Visual Studio Code
+      allowPrerelease: true
+    settings:
+      id: "Microsoft.VisualStudioCode"
+      source: winget
+    id: Microsoft.VisualStudioCode
+
+  - resource: Microsoft.WinGet.DSC/WinGetPackage
+    directives:
+      description: Installing Microsoft PowerShell
+      allowPrerelease: true
+    settings:
+      id: "Microsoft.PowerShell"
+      source: winget
+    id: Microsoft.PowerShell
+
+  - resource: Microsoft.WinGet.DSC/WinGetPackage
+    directives:
+      description: Installing Microsoft PowerToys
+      allowPrerelease: true
+    settings:
+      id: "Microsoft.PowerToys"
+      source: winget
+    id: Microsoft.PowerToys
+
+  - resource: Microsoft.WinGet.DSC/WinGetPackage
+    directives:
+      description: Installing 7zip
+      allowPrerelease: true
+    settings:
+      id: "7zip.7zip"
+      source: winget
+    id: 7zip.7zip
