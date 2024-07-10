@@ -20,6 +20,8 @@ choco upgrade -y cascadiacodepl
 choco upgrade -y hashcheck
 
 choco install -y nodejs-lts
+choco install -y fnm
+
 choco upgrade -y yarn
 choco upgrade -y mkcert
 
