@@ -12,6 +12,7 @@ choco upgrade -y winmerge
 choco upgrade -y powershell-core
 choco upgrade -y microsoft-windows-terminal
 
+choco upgrade -y jetbrainsmono
 choco upgrade -y cascadiamono
 choco upgrade -y cascadiamonopl
 choco upgrade -y cascadiacodepl
