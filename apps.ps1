@@ -19,7 +19,7 @@ choco upgrade -y cascadiacodepl
 
 choco upgrade -y hashcheck
 
-choco install -y nodejs-lts --version=16.18.1
+choco install -y nodejs-lts
 choco upgrade -y yarn
 choco upgrade -y mkcert
 
