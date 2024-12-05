@@ -102,3 +102,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+USER_PROFILE_WIN=$(wslpath "$(wslvar USERPROFILE)")
+export PATH="$USER_PROFILE_WIN/AppData/Local/Programs/Microsoft VS Code/bin:$PATH"
