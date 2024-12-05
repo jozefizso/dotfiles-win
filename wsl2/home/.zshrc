@@ -103,5 +103,13 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# fnm
+FNM_PATH="/home/jozef/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/jozef/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
+
+
 USER_PROFILE_WIN=$(wslpath "$(wslvar USERPROFILE)")
 export PATH="$USER_PROFILE_WIN/AppData/Local/Programs/Microsoft VS Code/bin:$PATH"
