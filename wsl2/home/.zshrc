@@ -116,6 +116,12 @@ if [ -d "$FNM_PATH" ]; then
   eval "`fnm env`"
 fi
 
+# phpenv
+export PHPENV_ROOT="/home/jozef/.phpenv"
+if [ -d "${PHPENV_ROOT}" ]; then
+  export PATH="${PHPENV_ROOT}/bin:${PATH}"
+  eval "$(phpenv init -)"
+fi
 
 USER_PROFILE_WIN=$(wslpath "$(wslvar USERPROFILE)")
 export PATH="$USER_PROFILE_WIN/AppData/Local/Programs/Microsoft VS Code/bin:$PATH"
