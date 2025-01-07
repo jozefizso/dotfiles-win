@@ -1,0 +1,140 @@
+[user]
+  name = Jozef Izso
+  email = jozef.izso@gmail.com
+	signingkey = 4A58F921E45E4FD1
+
+[alias]
+  # View the SHA, description, and history graph of the latest 20 commits
+  l = log --pretty=oneline -n 20 --graph --decorate
+  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+
+  #ll = log --all --pretty='format:%d %Cgreen%h%Creset %an - %s' --graph
+
+  # View the current working tree status using the short format
+  s = status -s
+  # Diff
+  d = diff --patch-with-stat
+  # Pull in remote changes for the current repository and all its submodules
+  p = !"git pull; git submodule foreach git pull origin master"
+  # Clone a repository including all submodules
+  c = clone --recursive
+  # Commit all changes
+  ca = !git add -A && git commit -av
+  # Switch to a branch, creating it if necessary
+  go = checkout -B
+  # Credit an author on the latest commit
+  credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
+  # Undo a `git push`
+  undopush = push -f origin HEAD^:master
+  # Subversion style shortcuts
+  co = checkout
+  ci = commit
+  st = status -s
+  pu = !"git fetch origin -v; git fetch upstream -v; git merge upstream/master"
+  up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+
+  r = remote -v
+  rr = !git reset --hard HEAD && git clean -d -f
+  r1 = reset HEAD^
+  r2 = reset HEAD^^
+  rh = reset --hard
+  rh1 = reset HEAD^ --hard
+  rh2 = reset HEAD^^ --hard
+
+  # http://gggritso.com/human-git-aliases
+  unstage = reset -q HEAD --
+  discard = checkout --
+  nevermind = !git reset --hard HEAD && git clean -d -f
+  uncommit = reset --mixed HEAD~
+  save = commit -m
+  resave = commit --amend
+  invert = revert
+  last = log -1 HEAD --format=format:"%Cred%H"
+  summary = status -u -s
+  graph = log --graph -10 --branches --remotes --tags  --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %ar) %Cred%d' --date-order
+  history = log -10 --format=format:'%Cgreen%h %Creset• %s (%cN, %ar)'
+  branchout = checkout -b
+  tags = tag -l -n1
+  branches = branch -a
+  stashes = stash list
+  remotes = remote -v
+  prestage = diff -w --word-diff=color
+  precommit = diff --cached -w --word-diff=color --word-diff-regex='[^[:space:]<>]+'
+  move = mv
+  remove = rm
+  unmerged = branch --no-merged
+  unstash = stash pop
+  what = show -w
+  untrack = rm -r --cached
+  rewrite = rebase -i
+  amend = commit --amend
+  back = checkout "-"
+  contributors = shortlog -s -n --no-merges
+  filetrail = log --follow -p -w
+  mergetrail = log --ancestry-path --merges
+  unmerged = diff --name-only --diff-filter=U
+
+[apply]
+  # Detect whitespace errors when applying a patch
+  whitespace = fix
+
+[core]
+  # Use Sublime as text editor
+  # editor = subl -n -w
+  # Use custom `.gitignore` and `.gitattributes`
+  excludesfile = ~/.gitignore
+  attributesfile = ~/.gitattributes
+  # Treat spaces before tabs, lines that are indented with 8 or more spaces, and
+  # all kinds of trailing whitespace as an error.
+  # [default] trailing-space: looks for spaces at the end of a line
+  # [default] space-before-tab: looks for spaces before tabs at the beginning of
+  # a line
+  whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+  editor = code -n --wait
+
+[color]
+  # Use colors in Git commands that are capable of colored output when outputting to the terminal
+  ui = auto
+[color "branch"]
+  current = white yellow
+  local = yellow
+  remote = blue
+[color "diff"]
+  meta = yellow reverse
+  frag = magenta reverse
+  old = red
+  new = green
+[color "status"]
+  added = green
+  changed = blue
+  untracked = cyan
+[merge]
+  # Include summaries of merged commits in newly created merge commit messages
+  log = true
+
+# Use `origin` as the default remote on the `master` branch in all cases
+[branch "master"]
+  remote = origin
+  merge = refs/heads/master
+
+[push]
+  default = current
+[filter "lfs"]
+  smudge = git-lfs smudge -- %f
+  required = true
+  clean = git-lfs clean -- %f
+[commit]
+  gpgsign = false
+[credential "https://github.com"]
+	helper = 
+	helper = !/home/linuxbrew/.linuxbrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/home/linuxbrew/.linuxbrew/bin/gh auth git-credential
+[init]
+	defaultBrancn = main
+
+[gpg "x509"]
+	program = gpgsm
