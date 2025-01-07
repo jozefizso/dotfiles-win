@@ -73,6 +73,8 @@ ZSH_THEME="robbyrussell"
 plugins=(
   git
   fnm
+  dotenv
+  dotnet
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -102,6 +104,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# dotnet
+export DOTNET_ROOT=$HOME/.dotnet
+export PATH="$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools"
 
 # fnm
 FNM_PATH="/home/jozef/.local/share/fnm"
