@@ -4,46 +4,41 @@ properties:
   configurationVersion: 0.2.0
   resources:
   - resource: Microsoft.WinGet.DSC/WinGetPackage
+    id: Package_Git
     directives:
-      description: Installing Git.Git
-      allowPrerelease: true
+      description: Install Git
     settings:
-      id: "Git.Git"
+      id: Git.Git
       source: winget
-    id: Git.Git
 
   - resource: Microsoft.WinGet.DSC/WinGetPackage
+    id: Package_VisualStudioCode
     directives:
-      description: Installing Visual Studio Code
-      allowPrerelease: true
+      description: Install Visual Studio Code
     settings:
-      id: "Microsoft.VisualStudioCode"
+      id: Microsoft.VisualStudioCode
       source: winget
-    id: Microsoft.VisualStudioCode
 
   - resource: Microsoft.WinGet.DSC/WinGetPackage
+    id: Package_PowerShell
     directives:
-      description: Installing Microsoft PowerShell
-      allowPrerelease: true
+      description: Install Microsoft PowerShell 7
     settings:
-      id: "Microsoft.PowerShell"
+      id: Microsoft.PowerShell
       source: winget
-    id: Microsoft.PowerShell
 
   - resource: Microsoft.WinGet.DSC/WinGetPackage
+    id: Package_PowerToys
     directives:
-      description: Installing Microsoft PowerToys
-      allowPrerelease: true
+      description: Install Microsoft PowerToys
     settings:
-      id: "Microsoft.PowerToys"
+      id: Microsoft.PowerToys
       source: winget
-    id: Microsoft.PowerToys
 
   - resource: Microsoft.WinGet.DSC/WinGetPackage
+    id: Package_7zip
     directives:
-      description: Installing 7zip
-      allowPrerelease: true
+      description: Install 7-Zip
     settings:
-      id: "7zip.7zip"
+      id: 7zip.7zip
       source: winget
-    id: 7zip.7zip
