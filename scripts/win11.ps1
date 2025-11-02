@@ -51,6 +51,7 @@ function InjectDriversToWIM {
     New-Item -Path C:\Data\temp\IMAGE -Name Mount -ItemType Directory -Force 
 
     #Remove all SWM files from the Sources folder on the usb drive
+    Write-Host "Moving installation image from USB drive, this can take a while..." -ForegroundColor Yellow
     Move-Item -Path $usb\Sources\*.$installfile -Destination C:\Data\temp\IMAGE\Source -Force
     if (Test-Path -Path C:\Data\temp\IMAGE\Source\boot.wim) { Move-Item -Path C:\Data\temp\IMAGE\Source\boot.wim -Destination $usb\Sources\ -Force }
     switch ($installfile) {
