@@ -5,7 +5,7 @@
 choco upgrade -y git --params "/NoShellIntegration"
 choco upgrade -y gh
 choco upgrade -y 7zip
-choco upgrade -y notepad2-mod
+choco upgrade -y notepad4
 choco upgrade -y totalcommander
 choco upgrade -y sublimemerge
 choco upgrade -y winmerge
