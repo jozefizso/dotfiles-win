@@ -29,7 +29,7 @@ function InjectDriversToWIM {
     if (Test-Path -Path $driver) {Write-Host "Found driver directory" -ForegroundColor Green} else {Write-Host "No valid driver directory path found!" -ForegroundColor Red}
 
     #Create Temp path
-    New-Item -Path C:\ -Name Data-ItemType Directory -Force
+    New-Item -Path C:\ -Name Data -ItemType Directory -Force
     New-Item -Path C:\Data -Name temp -ItemType Directory -Force
     New-Item -Path C:\Data\temp\IMAGE -Name IMAGE -ItemType Directory -Force
     New-Item -Path C:\Data\temp\IMAGE -Name Source -ItemType Directory -Force
