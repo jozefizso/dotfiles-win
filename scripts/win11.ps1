@@ -2,11 +2,27 @@ function InjectDriversToWIM {
     # Copyright (c) 2025 Niklas Rast
     # https://niklasrast.io/blog/post-0078
     #
+    <#
+    .DESCRIPTION
+    Injects drivers into a Windows installation WIM/SWM file on a bootable USB drive.
+    
+    .PARAMETER usb
+    The drive path to the pre-created Windows install stick (e.g., D:)
+    
+    .PARAMETER driver
+    The path to the enterprise driver pack directory (e.g., C:\Data\drivers\x13_drivers)
+    #>
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$usb,
+        
+        [Parameter(Mandatory=$true)]
+        [string]$driver
+    )
 
     Write-Host "This function will inject OEM drivers Windows install file." -ForegroundColor Yellow
 
-    #Set USB path and check that install file(s) exist
-    $usb = Read-Host -Prompt "Please enter drive path for pre-created windows install stick (for example: D:)"
+    #Detect install image file presence and its format
     $wim = "$usb\sources\install.wim"
     $swm = "$usb\sources\install.swm"
     $installfile
@@ -24,8 +40,7 @@ function InjectDriversToWIM {
         }
     }
 
-    #Set DRIVER path
-    $driver = Read-Host -Prompt "Please enter path for enterprise driver pack (for example: C:\Data\drivers\x13_drivers)"
+    #Validate DRIVER path
     if (Test-Path -Path $driver) {Write-Host "Found driver directory" -ForegroundColor Green} else {Write-Host "No valid driver directory path found!" -ForegroundColor Red}
 
     #Create Temp path
