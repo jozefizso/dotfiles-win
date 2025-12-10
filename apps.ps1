@@ -19,6 +19,7 @@ choco upgrade -y cascadiacodepl
 
 choco upgrade -y hashcheck
 
+choco upgrade -y bun
 choco install -y nodejs-lts
 choco install -y fnm
 
