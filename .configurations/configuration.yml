@@ -47,3 +47,6 @@ properties:
       id: "7zip.7zip"
       source: winget
     id: 7zip.7zip
+
+  # NVMe Modern Driver and Storage Optimization Configuration
+  # For NVMe storage optimizations, run: winget configure .\.configurations\nvme-storage.dsc.yml

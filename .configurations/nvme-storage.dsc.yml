@@ -1,0 +1,96 @@
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+# NVMe Modern Driver and Storage Optimization Configuration
+# Reference: https://github.com/microsoft/winget-create#building-the-client
+properties:
+  configurationVersion: 0.2.0
+  resources:
+  # NVMe Modern Driver Feature Management Overrides
+  - resource: PSDscResources/Registry
+    id: NVMeFeature735209102
+    directives:
+      description: Enable NVMe Feature Management Override 735209102
+    settings:
+      Key: 'HKLM:\SYSTEM\CurrentControlSet\Policies\Microsoft\FeatureManagement\Overrides'
+      ValueName: '735209102'
+      ValueData: 1
+      ValueType: 'Dword'
+      Ensure: 'Present'
+
+  - resource: PSDscResources/Registry
+    id: NVMeFeature1853569164
+    directives:
+      description: Enable NVMe Feature Management Override 1853569164
+    settings:
+      Key: 'HKLM:\SYSTEM\CurrentControlSet\Policies\Microsoft\FeatureManagement\Overrides'
+      ValueName: '1853569164'
+      ValueData: 1
+      ValueType: 'Dword'
+      Ensure: 'Present'
+
+  - resource: PSDscResources/Registry
+    id: NVMeFeature156965516
+    directives:
+      description: Enable NVMe Feature Management Override 156965516
+    settings:
+      Key: 'HKLM:\SYSTEM\CurrentControlSet\Policies\Microsoft\FeatureManagement\Overrides'
+      ValueName: '156965516'
+      ValueData: 1
+      ValueType: 'Dword'
+      Ensure: 'Present'
+
+  # SafeBoot Storage Disk Configuration
+  - resource: PSDscResources/Registry
+    id: SafeBootNetwork
+    directives:
+      description: Configure SafeBoot Network Storage Disks
+    settings:
+      Key: 'HKLM:\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\{75416E63-5912-4DFA-AE8F-3EFACCAFFB14}'
+      ValueName: ''
+      ValueData: 'Storage Disks'
+      ValueType: 'String'
+      Ensure: 'Present'
+
+  - resource: PSDscResources/Registry
+    id: SafeBootMinimal
+    directives:
+      description: Configure SafeBoot Minimal Storage Disks
+    settings:
+      Key: 'HKLM:\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\{75416E63-5912-4DFA-AE8F-3EFACCAFFB14}'
+      ValueName: ''
+      ValueData: 'Storage Disks'
+      ValueType: 'String'
+      Ensure: 'Present'
+
+  # Storage Performance Optimizations
+  - resource: PSDscResources/Registry
+    id: DisablePrefetcher
+    directives:
+      description: Disable System Prefetcher for NVMe
+    settings:
+      Key: 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters'
+      ValueName: 'EnablePrefetcher'
+      ValueData: 0
+      ValueType: 'Dword'
+      Ensure: 'Present'
+      Force: true
+
+  - resource: PSDscResources/Registry
+    id: DisableSuperfetch
+    directives:
+      description: Disable Superfetch for NVMe
+    settings:
+      Key: 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters'
+      ValueName: 'EnableSuperfetch'
+      ValueData: 0
+      ValueType: 'Dword'
+      Ensure: 'Present'
+      Force: true
+
+  - resource: PSDscResources/Service
+    directives:
+      description: Disable SysMain (Superfetch) service
+    settings:
+      Name: 'SysMain'
+      State: 'Stopped'
+      StartupType: 'Disabled'
+    id: DisableSysMain
