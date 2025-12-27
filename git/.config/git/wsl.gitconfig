@@ -1,0 +1,5 @@
+[core]
+  # Let Git handle line endings automatically based on .gitattributes
+  autocrlf = false
+  # Disable file mode tracking (Windows doesn't preserve +x bit properly)
+  filemode = false

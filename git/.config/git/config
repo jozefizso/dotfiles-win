@@ -136,19 +136,6 @@
 [commit]
   gpgsign = false
 
-[includeIf "gitdir/i:c:/dev/soonr/"]
-  path = .gitconfig-soonr
-[includeIf "gitdir/i:d:/dev/soonr/"]
-  path = .gitconfig-soonr
-
-[includeIf "gitdir/i:c:/dev/slido/"]
-  path = .gitconfig-slido
-[includeIf "gitdir/i:d:/dev/slido/"]
-  path = .gitconfig-slido
-
-[includeIf "gitdir/i:e:/code/"]
-  path = .gitconfig-chromium
-
 [http]
 	sslBackend = schannel
 [credential "https://git.space.local"]
@@ -171,3 +158,23 @@
 	allowGlobalGitConfig = false
 [safe]
 	directory = %(prefix)///wsl.localhost/ubuntu-dev/home/jozef/*
+  directory = %(prefix)///wsl.localhost/Ubuntu-22.04/home/jozef/*
+
+[includeIf "gitdir/i:d:/dev/soonr/"]
+  path = .gitconfig-soonr
+
+[includeIf "gitdir/i:d:/dev/slido/"]
+  path = .gitconfig-slido
+
+[includeIf "gitdir/i:e:/code/"]
+  path = .gitconfig-chromium
+
+[includeIf "gitdir/i:e:/code/"]
+  path = .gitconfig-chromium
+
+
+[includeIf "gitdir/i://wsl.localhost/Ubuntu-22.04/home/"]
+  path = wsl.gitconfig
+
+[includeIf "gitdir/i://wsl.localhost/ubuntu-dev/home/"]
+  path = wsl.gitconfig
