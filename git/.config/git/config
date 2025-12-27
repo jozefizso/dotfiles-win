@@ -1,6 +1,7 @@
 [user]
 	name = Jozef Izso
 	email = jozef.izso@gmail.com
+	signingkey = 4A58F921E45E4FD1
 
 [alias]
   # View the SHA, description, and history graph of the latest 20 commits
@@ -93,6 +94,12 @@
   whitespace = space-before-tab,-indent-with-non-tab,trailing-space
   autocrlf = true
   editor = code -n --wait
+  
+  # Chromium settings
+  # autocrlf = false
+  filemode = false
+  fscache = true
+  preloadindex = true
 
 [color]
   # Use colors in Git commands that are capable of colored output when outputting to the terminal
@@ -122,9 +129,10 @@
 [push]
   default = current
 [filter "lfs"]
-  smudge = git-lfs smudge -- %f
+	smudge = git-lfs smudge --skip -- %f
   required = true
-  clean = git-lfs clean -- %f
+	clean = git-lfs clean -- %f
+	process = git-lfs filter-process --skip
 [commit]
   gpgsign = false
 
@@ -138,8 +146,28 @@
 [includeIf "gitdir/i:d:/dev/slido/"]
   path = .gitconfig-slido
 
-[gpg]
-  program = C:\\Program Files (x86)\\GnuPG\\bin\\gpg.exe
+[includeIf "gitdir/i:e:/code/"]
+  path = .gitconfig-chromium
 
+[http]
+	sslBackend = schannel
+[credential "https://git.space.local"]
+	provider = generic
+  
 [gpg "x509"]
-  program = smimesign
+	program = C:\\Program Files\\smimesign\\smimesign.exe
+
+[gpg]
+	program = C:\\Program Files (x86)\\GnuPG\\bin\\gpg.exe
+	format = openpgp
+
+[credential "https://github.com"]
+	helper = 
+	helper = !'C:\\Program Files\\GitHub CLI\\gh.exe' auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !'C:\\Program Files\\GitHub CLI\\gh.exe' auth git-credential
+[depot-tools]
+	allowGlobalGitConfig = false
+[safe]
+	directory = %(prefix)///wsl.localhost/ubuntu-dev/home/jozef/*

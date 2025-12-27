@@ -1,0 +1,15 @@
+# Chromium source code
+
+#
+# Docs: https://bitbucket.org/chromiumembedded/cef/wiki/ContributingWithGit.md
+#
+[core]
+  autocrlf = input
+  safecrlf = true
+  longpaths = true
+  filemode = false
+  fscache = true
+  preloadindex = true
+
+[branch]
+  autosetuprebase = always
